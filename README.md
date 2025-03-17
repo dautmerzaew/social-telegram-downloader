@@ -92,4 +92,4 @@ Contributions are welcome! Feel free to submit issues or pull requests to enhanc
 ---
 
 ### Author
-Developed by Bennitenni111. Connect on [GitHub](https://github.com/Bennitenni111).
+Developed by rahim. Connect on [GitHub](https://github.com/rahimprz).
