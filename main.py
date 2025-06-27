@@ -1,5 +1,5 @@
 from telegram import Update
-from telegram.ext import Application, CommandHandler, MessageHandler, filters, CallbackContext
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 import requests
 import http.client
@@ -343,12 +343,13 @@ async def handle_message(update: Update, context: CallbackContext) -> None:
 
 
 def main() -> None:
-    application = Application.builder().token(TOKEN).build()
+    updater = Updater(token=TOKEN, use_context=True)
+dispatcher = updater.dispatcher
 
-    application.add_handler(CommandHandler("start", start))
-    application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
+dispatcher.add_handler(...)
 
-    application.run_polling()
+updater.start_polling()
+updater.idle()
 
 if __name__ == '__main__':
     main()
