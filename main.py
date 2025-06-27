@@ -330,26 +330,4 @@ async def handle_message(update: Update, context: CallbackContext) -> None:
             response = ""
             if 'video_url' in urls:
                 response += f"Video URL: {urls['video_url']}\n"
-            if 'image_url' in urls:
-                response += f"Image URL: {urls['image_url']}\n"
-            if response:
-                await update.message.reply_text(response)
-            else:
-                await update.message.reply_text("No media found.")
-                
-    else:
-        await update.message.reply_text("Unsupported URL or format.")
-
-
-
-def main() -> None:
-    updater = Updater(token=TOKEN, use_context=True)
-dispatcher = updater.dispatcher
-
-dispatcher.add_handler(...)
-
-updater.start_polling()
-updater.idle()
-
-if __name__ == '__main__':
-    main()
+            if 'image_url
